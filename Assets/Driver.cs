@@ -17,7 +17,7 @@ public class Driver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   float turnAmount = Input.GetAxis("Horizontal") * turnSpeed; //control with keyboard
-        
+        float moveAmount =  Input.GetAxis("Vertical") * moveSpeed;
         //object get updated rotation in every signle frame f is for float
         transform.Rotate(0,0,-turnAmount); //use -ve to rotate in correct direction
         transform.Translate(0,moveSpeed,0);
