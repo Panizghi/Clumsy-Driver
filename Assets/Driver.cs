@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-   [SerializeField] float turnSpeed = 0.001f;
-   [SerializeField] float moveSpeed = 0.001f; 
+   [SerializeField] float turnSpeed = 0.1f;
+   [SerializeField] float moveSpeed = 0.1f; 
 
 
     // Start is called before the first frame update
@@ -16,11 +16,17 @@ public class Driver : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   float turnAmount = Input.GetAxis("Horizontal") * turnSpeed; //control with keyboard
-        float moveAmount =  Input.GetAxis("Vertical") * moveSpeed;
+    {  //delatime will tell us how long exe each frame will take
+        float turnAmount = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime; //control with keyboard
+        float moveAmount =  Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+
+        
+
+
+
         //object get updated rotation in every signle frame f is for float
         transform.Rotate(0,0,-turnAmount); //use -ve to rotate in correct direction
-        transform.Translate(0,moveSpeed,0);
+        transform.Translate(0,moveAmount,0);
         
     }
 }
