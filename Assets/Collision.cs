@@ -8,6 +8,8 @@ public class Collision : MonoBehaviour
         //collsion event details
         Debug.Log("Oppsie!");
     }
+
+    
         
 }
 
