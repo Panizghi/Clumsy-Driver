@@ -14,7 +14,7 @@ public class Delivery : MonoBehaviour
     // for package pickup 
     //use tags for the package in unity 
     void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Package"){
+        if(other.tag == "Package" && !hasPackage){ //one delivery at a time
             Debug.Log("Package Picked up!");
             hasPackage =true ;
             Destroy(other.GameObject,destroyPack);
