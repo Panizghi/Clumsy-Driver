@@ -12,8 +12,8 @@ public class Camera : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate() //using late update due to excution order so camera doesnt move slower than car 
     {
-        transform.position = objectFollow.transform.position + new Vector3(0,0,-30);
+        transform.position = objectFollow.transform.position + new Vector3(0,0,-10);
     }
 }
