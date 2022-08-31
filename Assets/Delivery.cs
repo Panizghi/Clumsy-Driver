@@ -19,15 +19,13 @@ public class Delivery : MonoBehaviour
     }
     
 
-    void OnCollisionEnter2D(Collision2D other) {
-        //collsion event details
-        Debug.Log("Oppsie!");
-    }
+    
 
     // for package pickup 
     //use tags for the package in unity 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Package" && !hasPackage){ //pick up the package if driver does not have any 
+        //package marked with red sqaure sprite with Package tag 
             Debug.Log("Package Picked up!");
             hasPackage =true ; //change the flag of of having package
             spriteRenderer.color = hasPackColor; 
@@ -35,6 +33,7 @@ public class Delivery : MonoBehaviour
            
         }
         if(other.tag =="Customer" && hasPackage){ //only deliver to customer when you have the package 
+        //customers marked with white square sprite and Customer tag 
             Debug.Log("Package Delivered");
             hasPackage =false ; //prevent multiple delivery
             spriteRenderer.color = noPackColor;
